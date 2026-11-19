@@ -5,6 +5,8 @@ from pathlib import Path
 
 import pdfplumber
 from fastapi.testclient import TestClient
+import pytest
+from starlette.websockets import WebSocketDisconnect
 
 from api.server import create_app
 from resolvers.scholarly_resolver import ResolvedPaper
@@ -192,3 +194,53 @@ def test_benchmark_does_not_wait_for_normal_audit_queue(tmp_path):
             assert time.perf_counter() - start < 3
         finally:
             client.portal.call(manager.slots.release)
+
+
+def test_hosted_origin_allows_cors_and_websockets(tmp_path, monkeypatch):
+    origin = "https://citeverify-x.vercel.app"
+    monkeypatch.setenv("CITEVERIFY_ORIGINS", f" {origin}/, ")
+    with TestClient(create_app(tmp_path, Pipeline())) as client:
+        assert client.get("/api/v1/health").json()["status"] == "ok"
+        preflight = client.options(
+            "/api/v1/verify",
+            headers={
+                "Origin": origin,
+                "Access-Control-Request-Method": "POST",
+                "Access-Control-Request-Headers": "content-type",
+            },
+        )
+        assert preflight.status_code == 200
+        assert preflight.headers["access-control-allow-origin"] == origin
+        assert "access-control-allow-origin" not in client.get(
+            "/api/v1/health", headers={"Origin": "https://unrelated.example"}
+        ).headers
+        task_id = client.post("/api/v1/verify/benchmark/clean_study").json()["task_id"]
+        with client.websocket_connect(
+            f"/api/v1/verify/stream/{task_id}", headers={"Origin": origin}
+        ) as socket:
+            assert socket.receive_json()["task_id"] == task_id
+        with pytest.raises(WebSocketDisconnect) as rejected:
+            with client.websocket_connect(
+                f"/api/v1/verify/stream/{task_id}",
+                headers={"Origin": "https://unrelated.example"},
+            ):
+                pass
+        assert rejected.value.code == 4403
+        assert finish(client, task_id)[-1]["stage"] == "Complete"
+
+
+def test_uploaded_demo_fixture_is_labeled_synthetic(tmp_path, monkeypatch):
+    monkeypatch.setenv("DEMO_MODE", "true")
+    monkeypatch.setattr("api.server.DEMO_MODE", True)
+    monkeypatch.setattr("api.jobs.DEMO_MODE", True)
+    document = Path(__file__).resolve().parent / "benchmarks/clean_study.pdf"
+    with TestClient(create_app(tmp_path)) as client:
+        task_id = client.post(
+            "/api/v1/verify", files={"file": (document.name, document.read_bytes())}
+        ).json()["task_id"]
+        assert finish(client, task_id)[-1]["stage"] == "Complete"
+        report = client.get(f"/api/v1/verify/report/{task_id}").json()
+        assert report["demo"] is True
+        assert report["summary"]["veracity_score"] == 100
+        assert "Synthetic" in report["warnings"][0]
+        assert client.get("/api/v1/health").json()["demo_mode"] is True

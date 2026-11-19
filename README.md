@@ -15,6 +15,12 @@
 
 ## Quick start
 
+Already using the [hosted frontend](https://citeverify-x.vercel.app)? Deploy the
+Phase 4/5 backend with [Deploy to Render](https://render.com/deploy?repo=https://github.com/Rudra-Pratap-Singh-07/citeverify-x),
+then follow [the Vercel connection guide](docs/DEPLOYMENT.md). The default cloud
+configuration runs the synthetic demo; live checks require the configuration
+described in that guide.
+
 Requires Python 3.11, Node.js, and pnpm. The frontend regression tests use Node.js 24 native TypeScript support.
 
 ```powershell

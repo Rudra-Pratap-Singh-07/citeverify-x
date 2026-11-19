@@ -77,10 +77,14 @@ def create_app(
     storage = directory or Path(
         os.getenv("CITEVERIFY_TASK_DIR", str(ROOT / "data/audits"))
     )
-    origins = os.getenv(
-        "CITEVERIFY_ORIGINS",
-        "http://localhost:3000,http://127.0.0.1:3000,http://localhost:3001,http://127.0.0.1:3001",
-    ).split(",")
+    origins = [
+        origin.strip().rstrip("/")
+        for origin in os.getenv(
+            "CITEVERIFY_ORIGINS",
+            "http://localhost:3000,http://127.0.0.1:3000,http://localhost:3001,http://127.0.0.1:3001",
+        ).split(",")
+        if origin.strip()
+    ]
     if pipeline is None:
         backend = os.getenv("CITEVERIFY_NLI_BACKEND", "local")
         if backend not in ("local", "groq"):
@@ -148,7 +152,7 @@ def create_app(
 
     @app.get("/api/v1/health")
     async def health():
-        return {"status": "ok"}
+        return {"status": "ok", "demo_mode": DEMO_MODE, "version": app.version}
 
     @app.post("/api/v1/verify", status_code=202)
     async def verify(file: Annotated[UploadFile, File()]):

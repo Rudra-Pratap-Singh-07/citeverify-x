@@ -12,6 +12,7 @@ from pathlib import Path
 from typing import Any
 from uuid import uuid4
 
+from config import DEMO_MODE
 from parser.document_ingest import IngestionResult, ingest_document
 from resolvers.scholarly_resolver import ResolvedPaper, ScholarlyResolver
 from verification.models import Label
@@ -330,7 +331,7 @@ class JobManager:
             key=lambda c: (c.page_number, c.bounding_box["y0"], c.bounding_box["x0"]),
         )
         warnings = list(document.warnings)
-        if state.demo:
+        if state.demo or DEMO_MODE:
             warnings.insert(
                 0,
                 "Synthetic demonstration sources. This audit does not validate real published papers.",
@@ -341,7 +342,7 @@ class JobManager:
         return AuditReport(
             task_id=state.task_id,
             filename=state.filename,
-            demo=state.demo,
+            demo=state.demo or DEMO_MODE,
             created_at=state.created_at,
             completed_at=now(),
             pages=document.pages,

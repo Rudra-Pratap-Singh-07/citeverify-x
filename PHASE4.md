@@ -1,5 +1,8 @@
 # Phase 4: local evidence workbench
 
+For the existing Vercel frontend and a hosted Python backend, use
+[the deployment guide](docs/DEPLOYMENT.md) and the root `render.yaml`.
+
 Codex owns backend and frontend implementation. Antigravity handoffs are retired.
 
 ## Start

@@ -95,3 +95,10 @@ scripts/resolve_references.py emits an array of {anchor_id, paper} records. Join
 paper.status distinguishes resolved, missing, ambiguous, invalid_doi and unavailable. Display warnings and checked_at. The integrity badge uses retraction_status, whose values are retracted, expression_of_concern, not_flagged and unknown. Show independent openalex_retracted and retraction_watch_checked coverage, plus retraction_events containing reasons, date and original_journal. “Not flagged” describes the cached checks performed.
 
 full_text_urls contains direct OA links. landing_page_url opens the publisher/repository page. oa_status is available, closed or unknown. Abstracts carry abstract_source. See CODEX.md for configuration and CLI usage.
+# Hosted deployment handoff
+
+Codex owns the backend and frontend. Phase 4/5 hosting is documented in
+`docs/DEPLOYMENT.md`; `render.yaml` connects a Python backend to the existing
+Vercel origin. Health adds `demo_mode` and `version`; report `demo` also reflects
+offline-mode uploads. These additive changes preserve the existing UI contract.
+Verify with `python -m pytest -q` and `scripts/check_deployment.py`.

@@ -1,5 +1,10 @@
 # Phase 5: offline judging and golden benchmarks
 
+The same fixtures can run on the hosted backend. See
+[cloud deployment](docs/DEPLOYMENT.md). After deploying, run
+`python scripts/check_deployment.py https://YOUR-BACKEND-HOST` to check all three
+scenarios, reports, PDFs, and frontend CORS over HTTP.
+
 Run the complete local demo with one command from the repository root:
 
 ```powershell

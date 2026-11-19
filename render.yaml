@@ -1,0 +1,24 @@
+# Backend for the existing Vercel frontend. See docs/DEPLOYMENT.md.
+services:
+  - type: web
+    name: citeverify-x-api
+    runtime: python
+    plan: free
+    buildCommand: python scripts/cloud_build.py
+    startCommand: python -m uvicorn api.server:app --app-dir src --host 0.0.0.0 --port $PORT --workers 1
+    healthCheckPath: /api/v1/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.14
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: DEMO_MODE
+        value: "true"
+      - key: CITEVERIFY_ORIGINS
+        value: https://citeverify-x.vercel.app
+      - key: CITEVERIFY_TASK_DIR
+        value: data/audits
+      - key: CITEVERIFY_CACHE_PATH
+        value: data/paper_cache.db
+

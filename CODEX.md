@@ -1,5 +1,15 @@
 # Codex · Project Owner
 
+## Hosted Phase 4/5 deployment
+
+`render.yaml` runs one FastAPI worker for the existing Vercel frontend at
+`https://citeverify-x.vercel.app`. See `docs/DEPLOYMENT.md`. The Blueprint defaults
+to synthetic demo mode; live inference needs a rebuild and provider configuration.
+Health now includes `demo_mode` and `version`. Demo-mode uploads are labeled
+synthetic in reports and certificates. `CITEVERIFY_CACHE_PATH` supports a mounted
+cache location. Validate with `python -m pytest -q` and
+`python scripts/check_deployment.py https://BACKEND-HOST`.
+
 Codex owns the entire CiteVerify-X project, including ingestion, NLP, scholarly resolution, verification, backend integration, frontend architecture, design, tests and demo preparation. The user's ownership change supersedes earlier Antigravity assignments. ANTIGRAVITY.md records historical implementation context.
 
 ## Phase 1 handoff

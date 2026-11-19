@@ -97,14 +97,17 @@ class ScholarlyResolver:
 
     def __init__(
         self,
-        cache_path: str | Path = "data/paper_cache.db",
+        cache_path: str | Path | None = None,
         *,
         email: str | None = None,
         openalex_api_key: str | None = None,
         client: httpx.AsyncClient | None = None,
         interval: float = 1,
     ) -> None:
-        self.cache_path = Path(cache_path)
+        self.cache_path = Path(
+            cache_path if cache_path is not None
+            else os.getenv("CITEVERIFY_CACHE_PATH", "data/paper_cache.db")
+        )
         self.email = email or os.getenv("UNPAYWALL_EMAIL")
         self.key = openalex_api_key or os.getenv("OPENALEX_API_KEY")
         self.client = client
