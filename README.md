@@ -21,6 +21,9 @@ then follow [the Vercel connection guide](docs/DEPLOYMENT.md). The default cloud
 configuration runs the synthetic demo; live checks require the configuration
 described in that guide.
 
+The project's backend address is [citeverify-x.onrender.com](https://citeverify-x.onrender.com/docs)
+with a [health endpoint](https://citeverify-x.onrender.com/api/v1/health).
+
 Requires Python 3.11, Node.js, and pnpm. The frontend regression tests use Node.js 24 native TypeScript support.
 
 ```powershell

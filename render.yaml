@@ -1,7 +1,7 @@
 # Backend for the existing Vercel frontend. See docs/DEPLOYMENT.md.
 services:
   - type: web
-    name: citeverify-x-api
+    name: citeverify-x
     runtime: python
     plan: free
     buildCommand: python scripts/cloud_build.py
@@ -21,4 +21,3 @@ services:
         value: data/audits
       - key: CITEVERIFY_CACHE_PATH
         value: data/paper_cache.db
-

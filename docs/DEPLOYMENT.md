@@ -4,6 +4,17 @@ The frontend is https://citeverify-x.vercel.app. The Phase 4 FastAPI service and
 Phase 5 fixtures are in this repository. GitHub stores the code; a running web
 service hosts Python, background audits, SQLite, and WebSocket progress.
 
+## Project deployment addresses
+
+- Frontend: https://citeverify-x.vercel.app
+- Backend: https://citeverify-x.onrender.com
+- Health: https://citeverify-x.onrender.com/api/v1/health
+- API documentation: https://citeverify-x.onrender.com/docs
+
+The existing Render service is named `citeverify-x`. Reuse this service when
+updating the deployment. The Vercel Production variable
+`NEXT_PUBLIC_API_BASE_URL` is `https://citeverify-x.onrender.com`.
+
 ## 1. Deploy the backend
 
 [Deploy this repository on Render](https://render.com/deploy?repo=https://github.com/Rudra-Pratap-Singh-07/citeverify-x)
@@ -23,6 +34,9 @@ The service settings are:
 | Start | `python -m uvicorn api.server:app --app-dir src --host 0.0.0.0 --port $PORT --workers 1` |
 | Health check | `/api/v1/health` |
 | Frontend allowlist | `CITEVERIFY_ORIGINS=https://citeverify-x.vercel.app` |
+
+When entering the build command manually, **replace the entire default field**
+with `python scripts/cloud_build.py`. Do not append it to `poetry install`.
 
 Copy the **actual public HTTPS URL assigned by Render**. Do not assume that the
 service name will be the exact public hostname. Open `/api/v1/health` on that URL:
