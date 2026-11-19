@@ -1,0 +1,15 @@
+{
+  "papers_by_doi": {
+    "10.5555/citeverify-clean-1": {"status":"resolved","doi":"10.5555/citeverify-clean-1","title":"Clean study one","authors":["A. Researcher"],"year":2022,"journal":"Demo Science","retraction_status":"not_flagged","abstract":"The intervention improved accuracy by 12%. The sample included 100 participants."},
+    "10.5555/citeverify-clean-2": {"status":"resolved","doi":"10.5555/citeverify-clean-2","title":"Clean study two","authors":["B. Researcher"],"year":2023,"journal":"Demo Science","retraction_status":"not_flagged","abstract":"The treatment reduced response time by 8 milliseconds."},
+    "10.5555/citeverify-clean-3": {"status":"resolved","doi":"10.5555/citeverify-clean-3","title":"Clean study three","authors":["C. Researcher"],"year":2024,"journal":"Demo Science","retraction_status":"not_flagged","abstract":"The follow-up found a 90% completion rate."},
+    "10.5555/citeverify-inflated": {"status":"resolved","doi":"10.5555/citeverify-inflated","title":"Measured accuracy change","authors":["D. Researcher"],"year":2021,"journal":"Demo Metrics","retraction_status":"not_flagged","abstract":"The intervention improved accuracy by 12%."},
+    "10.9999/fictional-paper-never-registered": {"status":"missing","doi":"10.9999/fictional-paper-never-registered","title":null,"retraction_status":"unknown","warnings":["The benchmark DOI is intentionally fictional."]},
+    "10.1016/s0140-6736(97)11096-0": {"status":"resolved","doi":"10.1016/S0140-6736(97)11096-0","title":"Ileal-lymphoid-nodular hyperplasia, non-specific colitis, and pervasive developmental disorder in children","authors":["A. J. Wakefield et al."],"year":1998,"journal":"The Lancet","retraction_status":"retracted","openalex_retracted":true,"retraction_watch_checked":true,"retraction_events":[{"nature":"Retraction","date":"2010-02-02","reasons":"The Lancet retracted the article."}],"abstract":"This historical record is provided only to identify the retracted citation."}
+  },
+  "expected": {
+    "clean_study": {"labels":["SUPPORTED","SUPPORTED","SUPPORTED"],"retracted":0},
+    "exaggerated_claims": {"labels":["PARTIALLY_SUPPORTED"],"finding":"30%","expected_value":"12%"},
+    "retracted_and_hallucinated": {"labels":["RETRACTED","UNSUPPORTED"],"retracted":1,"missing":1}
+  }
+}

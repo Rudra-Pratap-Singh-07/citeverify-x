@@ -1,0 +1,242 @@
+[
+  {
+    "claim_id": "a7d61b4b27d4fe9c5b988d6f",
+    "claim_text": "Accuracy increased by 12% [1, 2].",
+    "anchor_id": "1",
+    "source_doi": "10.5555/demo",
+    "source_kind": "abstract",
+    "source_text_sha256": "65288dd9fbbb56dbaf194184887f5b9263ec03429793462b12849d00d2645c85",
+    "status": "completed",
+    "label": "SUPPORTED",
+    "confidence": 0.996490234331921,
+    "confidence_kind": "uncalibrated_model_score",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "selected_passage_id": "65288dd9fbbb56db:0:67",
+    "explanation": "Selected passage classified as supported.",
+    "evidence": [
+      {
+        "passage": {
+          "passage_id": "65288dd9fbbb56db:0:67",
+          "text": "In the trial, accuracy increased by 12%. Latency decreased by 8 ms.",
+          "start_char": 0,
+          "end_char": 67,
+          "start_word": 0,
+          "end_word": 12,
+          "bm25_score": 1.2740206065721722,
+          "cosine_score": 0.6755727529525757,
+          "fusion_score": 0.03278688524590164
+        },
+        "nli_scores": {
+          "entailment": 0.996490234331921,
+          "neutral": 0.0029983787835041083,
+          "contradiction": 0.0005113868845749009
+        },
+        "nli_label": "SUPPORTED",
+        "label": "SUPPORTED",
+        "confidence": 0.996490234331921,
+        "audit": {
+          "claim_entities": [
+            {
+              "text": "12%",
+              "value": 12.0,
+              "unit": "%",
+              "metric": "accuracy",
+              "comparator": "=",
+              "start": 22,
+              "end": 25,
+              "context": "Accuracy increased by 12% [1, 2]."
+            }
+          ],
+          "evidence_entities": [
+            {
+              "text": "12%",
+              "value": 12.0,
+              "unit": "%",
+              "metric": "accuracy",
+              "comparator": "=",
+              "start": 36,
+              "end": 39,
+              "context": "In the trial, accuracy increased by 12%. Latency decreased by 8 ms."
+            },
+            {
+              "text": "8 ms",
+              "value": 0.008,
+              "unit": "seconds",
+              "metric": "latency",
+              "comparator": "=",
+              "start": 62,
+              "end": 66,
+              "context": "In the trial, accuracy increased by 12%. Latency decreased by 8 ms."
+            }
+          ],
+          "findings": []
+        }
+      }
+    ],
+    "warnings": [
+      "Assessment uses the abstract only; full-text qualifiers may be missing.",
+      "Confidence is uncalibrated and is not a probability that the claim is true."
+    ]
+  },
+  {
+    "claim_id": "a7d61b4b27d4fe9c5b988d6f",
+    "claim_text": "Accuracy increased by 12% [1, 2].",
+    "anchor_id": "2",
+    "source_doi": "10.5555/demo",
+    "source_kind": "abstract",
+    "source_text_sha256": "65288dd9fbbb56dbaf194184887f5b9263ec03429793462b12849d00d2645c85",
+    "status": "completed",
+    "label": "SUPPORTED",
+    "confidence": 0.996490234331921,
+    "confidence_kind": "uncalibrated_model_score",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "selected_passage_id": "65288dd9fbbb56db:0:67",
+    "explanation": "Selected passage classified as supported.",
+    "evidence": [
+      {
+        "passage": {
+          "passage_id": "65288dd9fbbb56db:0:67",
+          "text": "In the trial, accuracy increased by 12%. Latency decreased by 8 ms.",
+          "start_char": 0,
+          "end_char": 67,
+          "start_word": 0,
+          "end_word": 12,
+          "bm25_score": 1.2740206065721722,
+          "cosine_score": 0.6755727529525757,
+          "fusion_score": 0.03278688524590164
+        },
+        "nli_scores": {
+          "entailment": 0.996490234331921,
+          "neutral": 0.0029983787835041083,
+          "contradiction": 0.0005113868845749009
+        },
+        "nli_label": "SUPPORTED",
+        "label": "SUPPORTED",
+        "confidence": 0.996490234331921,
+        "audit": {
+          "claim_entities": [
+            {
+              "text": "12%",
+              "value": 12.0,
+              "unit": "%",
+              "metric": "accuracy",
+              "comparator": "=",
+              "start": 22,
+              "end": 25,
+              "context": "Accuracy increased by 12% [1, 2]."
+            }
+          ],
+          "evidence_entities": [
+            {
+              "text": "12%",
+              "value": 12.0,
+              "unit": "%",
+              "metric": "accuracy",
+              "comparator": "=",
+              "start": 36,
+              "end": 39,
+              "context": "In the trial, accuracy increased by 12%. Latency decreased by 8 ms."
+            },
+            {
+              "text": "8 ms",
+              "value": 0.008,
+              "unit": "seconds",
+              "metric": "latency",
+              "comparator": "=",
+              "start": 62,
+              "end": 66,
+              "context": "In the trial, accuracy increased by 12%. Latency decreased by 8 ms."
+            }
+          ],
+          "findings": []
+        }
+      }
+    ],
+    "warnings": [
+      "Assessment uses the abstract only; full-text qualifiers may be missing.",
+      "Confidence is uncalibrated and is not a probability that the claim is true."
+    ]
+  },
+  {
+    "claim_id": "de591a08c96ef08057f0f5f1",
+    "claim_text": "Latency decreased by 8 ms (Chen et al., 2021).",
+    "anchor_id": "2",
+    "source_doi": "10.5555/demo",
+    "source_kind": "abstract",
+    "source_text_sha256": "65288dd9fbbb56dbaf194184887f5b9263ec03429793462b12849d00d2645c85",
+    "status": "completed",
+    "label": "SUPPORTED",
+    "confidence": 0.9948595893588452,
+    "confidence_kind": "uncalibrated_model_score",
+    "nli_model": "MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli",
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "selected_passage_id": "65288dd9fbbb56db:0:67",
+    "explanation": "Selected passage classified as supported.",
+    "evidence": [
+      {
+        "passage": {
+          "passage_id": "65288dd9fbbb56db:0:67",
+          "text": "In the trial, accuracy increased by 12%. Latency decreased by 8 ms.",
+          "start_char": 0,
+          "end_char": 67,
+          "start_word": 0,
+          "end_word": 12,
+          "bm25_score": 1.561702679023953,
+          "cosine_score": 0.717980146408081,
+          "fusion_score": 0.03278688524590164
+        },
+        "nli_scores": {
+          "entailment": 0.9948595893588452,
+          "neutral": 0.003978159726001405,
+          "contradiction": 0.0011622509151533965
+        },
+        "nli_label": "SUPPORTED",
+        "label": "SUPPORTED",
+        "confidence": 0.9948595893588452,
+        "audit": {
+          "claim_entities": [
+            {
+              "text": "8 ms",
+              "value": 0.008,
+              "unit": "seconds",
+              "metric": "latency",
+              "comparator": "=",
+              "start": 21,
+              "end": 25,
+              "context": "Latency decreased by 8 ms (Chen et al., 2021)."
+            }
+          ],
+          "evidence_entities": [
+            {
+              "text": "12%",
+              "value": 12.0,
+              "unit": "%",
+              "metric": "accuracy",
+              "comparator": "=",
+              "start": 36,
+              "end": 39,
+              "context": "In the trial, accuracy increased by 12%. Latency decreased by 8 ms."
+            },
+            {
+              "text": "8 ms",
+              "value": 0.008,
+              "unit": "seconds",
+              "metric": "latency",
+              "comparator": "=",
+              "start": 62,
+              "end": 66,
+              "context": "In the trial, accuracy increased by 12%. Latency decreased by 8 ms."
+            }
+          ],
+          "findings": []
+        }
+      }
+    ],
+    "warnings": [
+      "Assessment uses the abstract only; full-text qualifiers may be missing.",
+      "Confidence is uncalibrated and is not a probability that the claim is true."
+    ]
+  }
+]

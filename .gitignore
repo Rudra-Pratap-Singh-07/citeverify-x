@@ -1,0 +1,41 @@
+.bootstrap/
+.venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+tmp/
+data/*.db*
+data/audits/
+frontend/node_modules/
+frontend/.next/
+frontend/.env.local
+frontend/tsconfig.tsbuildinfo
+
+# Local credentials and runtime state
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+data/demo_audits/
+*.log
+*.pem
+*.key
+
+# Private authoring files and local design tooling
+.scrollcraft.json
+presentations/.build/
+scrollcraft/lab/
+scrollcraft/builds/**/shots/
+scrollcraft/builds/**/scrollcraft.js
+scrollcraft/builds/**/scrollcraft.css
+
+# Generated frontend output
+frontend/out/
+frontend/dist/
+frontend/public/pdf.worker.min.js
+.DS_Store
+Thumbs.db

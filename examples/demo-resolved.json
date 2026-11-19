@@ -1,0 +1,59 @@
+[
+  {
+    "anchor_id": "1",
+    "paper": {
+      "status": "resolved",
+      "doi": "10.5555/demo.2020",
+      "title": "Synthetic accuracy study",
+      "authors": [
+        "Rao, K."
+      ],
+      "year": 2020,
+      "journal": "Demo Journal",
+      "match_score": 1.0,
+      "openalex_retracted": false,
+      "retraction_status": "not_flagged",
+      "retraction_watch_checked": true,
+      "retraction_events": [],
+      "oa_status": "available",
+      "full_text_urls": [
+        "https://demo.org/open-access/demo.2020.pdf"
+      ],
+      "landing_page_url": "https://doi.org/10.5555/demo.2020",
+      "abstract": "In the trial, accuracy increased by 12%. Latency decreased by 8 ms.",
+      "abstract_source": "OpenAlex",
+      "raw_text": null,
+      "checked_at": 1795075401.23,
+      "warnings": []
+    }
+  },
+  {
+    "anchor_id": "2",
+    "paper": {
+      "status": "resolved",
+      "doi": "10.5555/demo.2021",
+      "title": "Synthetic latency study",
+      "authors": [
+        "Chen, M.",
+        "Ali, S."
+      ],
+      "year": 2021,
+      "journal": "Demo Journal",
+      "match_score": 1.0,
+      "openalex_retracted": false,
+      "retraction_status": "not_flagged",
+      "retraction_watch_checked": true,
+      "retraction_events": [],
+      "oa_status": "closed",
+      "full_text_urls": [],
+      "landing_page_url": "https://doi.org/10.5555/demo.2021",
+      "abstract": "In the trial, accuracy increased by 12%. Latency decreased by 8 ms.",
+      "abstract_source": "Semantic Scholar",
+      "raw_text": null,
+      "checked_at": 1795075401.23,
+      "warnings": [
+        "Assessment uses the abstract only; full-text qualifiers may be missing."
+      ]
+    }
+  }
+]

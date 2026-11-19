@@ -1,0 +1,184 @@
+/* The supplied five-stop grayscale identity. Status always includes a text label. */
+:root {
+  --canvas: #000000;
+  --surface: #1c1c1c;
+  --shaft: #3d3d3d;
+  --boulder: #7d7d7d;
+  --ink: #b0b0b0;
+  --muted: #b0b0b0;
+  --border: #3d3d3d;
+}
+body { font-weight: 400; font-size: 15px; }
+h1, h2, .brand {
+  font-family: var(--font-bogle);
+  font-weight: 400;
+  letter-spacing: .005em;
+}
+.brand { font-size: 25px; letter-spacing: .2px; gap: 12px; }
+.brand-mark { background: var(--ink); color: var(--canvas); border: 0; border-radius: 4px; }
+.brand-x { color: var(--boulder); }
+.primary {
+  background: var(--ink); color: var(--canvas); border: 1px solid var(--ink);
+  min-height: 44px; padding: 11px 21px; font-size: 14px; font-weight: 500;
+  border-radius: 5px; box-shadow: 0 4px 12px #00000033;
+}
+.primary:hover { background: var(--boulder); border-color: var(--boulder); color: var(--canvas); }
+button:focus-visible, a:focus-visible, summary:focus-visible { outline-color: var(--ink); }
+::selection { background: var(--ink); color: var(--canvas); }
+.launch-nav { background: var(--canvas); border: 0; border-bottom: 1px solid var(--shaft); border-radius: 0; height: 72px; padding: 0 4px; margin-top: 12px; backdrop-filter: none; }
+.nav-center { font-size: 14px; }
+.watch-badge { background: var(--surface); border: 1px solid var(--shaft); color: var(--ink); font-size: 12px; padding: 7px 11px; }
+.watch-badge .status-dot { color: var(--ink); animation: none; }
+.hero { min-height: 440px; padding: 48px 0 44px; }
+.hero-copy { width: 64%; }
+.hero h1 { font-size: clamp(72px, 7.3vw, 106px); font-weight: 400; letter-spacing: .005em; line-height: .98; text-wrap: nowrap; }
+.hero-emphasis { color: var(--boulder); }
+.release-label { color: var(--ink); font-size: 11px; letter-spacing: 1.2px; margin-bottom: 22px; }
+.hero-description { font-size: 16px; line-height: 1.65; max-width: 490px; margin-top: 25px; }
+.hero-caption { font-size: 11px; gap: 22px; margin-top: 20px; }
+.hero-caption svg { color: var(--ink); }
+.provenance-sculpture { top: 75px; width: 420px; opacity: 1; right: 0; }
+.orbit { border-color: var(--shaft); opacity: .45; }
+.graph-lines path { stroke: var(--shaft); stroke-width: 1; }
+.graph-lines .graph-active { stroke: var(--boulder); }
+.graph-label { background: var(--surface); border: 1px solid var(--shaft); padding: 16px; font-size: 9px; box-shadow: 0 15px 30px #00000066; }
+.graph-label b { font-family: var(--font-fredoka); font-size: 18px; color: var(--ink); line-height: 1.9; }
+.node-claim { left: -14px; top: 25px; }
+.node-claim b { text-decoration: line-through; text-decoration-thickness: 1px; }
+.node-source { background: var(--ink); color: var(--canvas); top: 203px; }
+.node-source b, .node-source svg { color: var(--canvas); }
+.node-doi { right: -4px; padding: 10px; font-size: 9px; }
+.node-alert { left: -10px; padding: 10px; top: 244px; border-style: dashed; font-size: 10px; }
+.graph-core { left: 170px; background: var(--surface); border: 1px solid var(--boulder); color: var(--ink); border-radius: 8px; }
+.diagram-caption { bottom: -20px; font-size: 8px; color: var(--boulder); }
+.launch-surface { background: var(--surface); border: 1px solid var(--shaft); border-top-color: var(--boulder); border-radius: 8px; backdrop-filter: none; box-shadow: 0 24px 60px #00000066; }
+.surface-topline { padding: 16px 26px; font-size: 14px; }
+.surface-topline .mono { color: var(--ink); font-size: 10px; }
+.dropzone { border-color: var(--boulder); background: var(--canvas); margin: 24px; padding: 30px 28px 50px; min-height: 170px; }
+.dropzone h2 { font-size: 29px; letter-spacing: .01em; font-weight: 400; }
+.dropzone p { font-size: 14px; margin-top: 6px; }
+.dropzone-note { color: var(--ink); font-size: 11px; left: 107px; bottom: 20px; }
+.upload-icon { background: var(--surface); color: var(--ink); border: 1px solid var(--shaft); border-radius: 5px; }
+.dropzone.dragging { background: var(--surface); border-color: var(--ink); outline-color: var(--boulder); }
+.benchmark-heading { font-size: 12px; margin-bottom: 16px; }
+.benchmark-section { padding: 0 24px 24px; }
+.preset { background: transparent; border-color: var(--shaft); border-radius: 5px; padding: 17px 18px; }
+.preset:hover { background: var(--canvas); border-color: var(--boulder); }
+.preset strong { font-size: 16px; font-weight: 500; letter-spacing: 0; }
+.preset p { font-size: 12px; color: var(--ink); }
+.preset-top { margin-bottom: 17px; }
+.preset-icon { color: var(--ink); }
+.methodology { gap: 90px; margin-top: 80px; margin-bottom: 80px; }
+.method-title h2 { font-size: 56px; line-height: 1.05; letter-spacing: .01em; }
+.method-title > p { font-size: 15px; }
+.method-row h3 { font-family: var(--font-fredoka); font-size: 18px; letter-spacing: 0; font-weight: 500; }
+.method-row p { font-size: 14px; line-height: 1.7; }
+.method-number { border-color: var(--shaft); width: 27px; height: 27px; color: var(--ink); }
+.launch-footer > span { font-size: 12px; }
+.launch-footer .brand { font-size: 20px; }
+.resume-link { font-size: 14px; text-decoration: underline; text-underline-offset: 5px; }
+
+/* A quieter working surface gives the actual evidence the strongest contrast. */
+.audit-app { background: var(--canvas); }
+.workspace-nav { height: 64px; }
+.workspace-nav .brand { font-size: 23px; }
+.environment-tag, .environment-tag.amber { color: var(--ink); }
+.command-bar { background: var(--surface); height: 96px; }
+.document-identity h1 { font-size: 24px; font-weight: 400; letter-spacing: .01em; }
+.doc-icon { border-color: var(--boulder); color: var(--ink); }
+.score-gauge circle:last-child { stroke: var(--ink); }
+.filter-tabs button { font-size: 13px; min-height: 36px; }
+.filter-tabs button[aria-pressed="true"] { background: var(--ink); color: var(--canvas); }
+.filter-tabs button[aria-pressed="true"] span { color: var(--canvas); background: #00000015; }
+.view-toggle button { min-height: 32px; font-size: 11px; }
+.view-toggle button[aria-pressed="true"] { background: var(--shaft); color: var(--ink); }
+.investigation-pane { background: var(--surface); border-color: var(--shaft); border-radius: 7px; }
+.pane-heading { background: var(--surface); height: 56px; }
+.pane-heading h2 { font-size: 20px; font-weight: 400; letter-spacing: .02em; }
+.document-page { background: var(--canvas); border-color: var(--shaft); }
+.document-page > h3 { font-family: var(--font-bogle); font-size: 28px; letter-spacing: .01em; font-weight: 400; }
+.source-publication > h3 { font-family: var(--font-fredoka); font-weight: 500; letter-spacing: -.01em; font-size: 22px; }
+.manuscript-claim { border-radius: 5px; }
+.manuscript-claim.active { border-color: var(--ink); background: var(--surface); box-shadow: 0 6px 18px #00000033; }
+.manuscript-claim > p, .source-proof blockquote { font-family: var(--font-fredoka); font-size: 17px; line-height: 1.8; letter-spacing: 0; }
+.badge { font-size: 11px; border-color: var(--boulder); color: var(--ink); }
+.badge.amber { border-style: dashed; }
+.badge.red, .badge.pink { background: var(--ink); color: var(--canvas); border-color: var(--ink); }
+.pedigree-banner { border-color: var(--shaft); background: var(--canvas); }
+.pedigree-banner.amber { border-style: dashed; }
+.pedigree-banner.pink { border: 3px double var(--ink); }
+.source-proof { background: var(--canvas); border-color: var(--shaft); padding: 24px 20px 16px; }
+.proof-metric { background: var(--shaft); color: var(--ink); text-decoration-color: var(--ink); text-decoration-thickness: 2px; }
+.discrepancy-card { background: var(--canvas); border-color: var(--boulder); border-style: dashed; padding: 18px; }
+.diff-heading h4 { font-size: 14px; }
+.diff-values strong { font-size: 36px; }
+.observed { background: var(--ink); color: var(--canvas); padding: 3px 8px; border-radius: 3px; }
+.claimed { color: var(--boulder); }
+.reasoning p { font-size: 14px; }
+.certificate-modal { background: var(--surface); border-color: var(--boulder); }
+.certificate-modal h2 { font-size: 34px; letter-spacing: .01em; }
+.error { background: var(--surface); color: var(--ink); border: 1px dashed var(--boulder); }
+.pdf-highlight { background: var(--boulder); }
+.pdf-highlight.amber { border: 1px dashed #000000; }
+.pdf-highlight.red, .pdf-highlight.pink { border: 2px double #000000; }
+.pdf-highlight.selected { outline-color: #000000; }
+
+@media (max-width: 1100px) and (min-width: 761px) {
+  .hero { min-height: 405px; }
+  .hero h1 { font-size: 74px; }
+  .hero-copy { width: 65%; }
+  .provenance-sculpture { width: 340px; right: -10px; top: 80px; transform: scale(.85); transform-origin: right center; }
+  .graph-core { left: 135px; }
+  .dropzone h2 { font-size: 25px; }
+  .dropzone-note { left: 107px; font-size: 10px; }
+  .document-identity h1 { font-size: 21px; }
+}
+@media (max-width: 760px) {
+  .launch-nav { height: 60px; margin: 10px 20px 0; padding: 0; }
+  .brand { font-size: 23px; gap: 8px; }
+  .watch-badge { font-size: 10px; padding: 6px; }
+  .hero { min-height: auto; padding: 38px 0 32px; margin: 0 24px; }
+  .hero-copy { width: 100%; }
+  .hero h1 { font-size: clamp(52px, 12.5vw, 82px); line-height: 1.02; letter-spacing: .005em; }
+  .release-label { font-size: 9px; letter-spacing: .6px; gap: 6px; margin-bottom: 20px; }
+  .release-label .label-separator { display: none; }
+  .hero-description { font-size: 14px; margin-top: 20px; line-height: 1.75; }
+  .hero-caption { font-size: 10px; gap: 9px 15px; margin-top: 18px; }
+  .surface-topline { font-size: 13px; padding: 15px; }
+  .surface-topline .mono { font-size: 9px; }
+  .dropzone { margin: 15px; padding: 25px 18px 58px; gap: 16px; }
+  .dropzone h2 { font-size: 26px; max-width: 270px; }
+  .dropzone p { font-size: 13px; }
+  .dropzone .primary { font-size: 14px; }
+  .dropzone-note { left: 14px; right: 14px; font-size: 9px; bottom: 17px; line-height: 1.6; }
+  .benchmark-section { padding: 0 15px 18px; }
+  .benchmark-heading { font-size: 12px; }
+  .benchmark-heading > span:last-child { font-size: 11px; }
+  .preset { flex-basis: 245px; }
+  .preset strong { font-size: 16px; }
+  .preset p { font-size: 12px; }
+  .methodology { margin: 48px 26px; }
+  .method-title h2 { font-size: 46px; }
+  .method-title > p { font-size: 14px; }
+  .method-row h3 { font-size: 17px; }
+  .method-row p { font-size: 14px; }
+  .launch-footer > span { font-size: 11px; }
+  .workspace-nav .brand { font-size: 21px; }
+  .workspace-nav { height: 58px; }
+  .environment-tag { font-size: 8px; }
+  .command-bar { height: auto; min-height: 135px; }
+  .document-identity h1 { font-size: 21px; }
+  .pane-heading h2 { font-size: 18px; }
+  .pane-heading { height: 54px; }
+  .filter-tabs button { font-size: 11px; min-height: 40px; }
+  .filter-tabs button span { font-size: 10px; }
+  .export-trigger { font-size: 12px; padding: 9px 11px; }
+  .manuscript-claim > p, .source-proof blockquote { font-size: 16px; }
+  .source-publication > h3 { font-size: 21px; }
+  .document-page { padding: 20px 15px; }
+  .document-page > h3 { font-size: 26px; }
+  .badge { font-size: 10px; }
+  .diff-heading h4 { font-size: 12px; }
+  .diff-values strong { font-size: 32px; }
+  .certificate-modal h2 { font-size: 30px; }
+}

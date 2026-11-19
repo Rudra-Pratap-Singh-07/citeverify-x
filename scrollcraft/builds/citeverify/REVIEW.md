@@ -1,0 +1,40 @@
+# CiteVerify-X interface review
+
+Final implementation lives in `frontend/app/page.tsx`, `frontend/app/audit/[id]/page.tsx`, `frontend/components/DualPaneWorkbench.tsx` and `frontend/tailwind.config.js`. Locally served Geist Sans and Geist Mono, Framer Motion, Lucide and Radix Dialog are installed. The earlier TypeScript Tailwind config was replaced by the requested JavaScript file.
+
+The supplied brief determines the direction. Implementation decisions are recorded in BRIEF.md; no missing brand interview was needed. The custom launch-to-investigation grammar uses a capsule at entry, application navigation during audit and an exported artifact at close. All eight reference grammars were considered. The initial registry was empty, so no historic rows required comparison.
+
+The signature is a semantic trace: selecting a manuscript claim updates the source, pulse and metric comparison together. The visitor goes from composed entry to agency, brief anticipation, clarity at the numerical discrepancy and a resolved audit export. Device score and layer contract are in BRIEF.md. No photographic or video assets were generated; existing PDFs, report text and SVG geometry carry the application.
+
+Visual verification inspected desktop entry, source detail, PDF rendering, numerical mismatch, retraction filter, fabricated citation, export modal and downloaded artifact. It also inspected 390x844 and 360x640 browser viewports, compact ending, and the `?motion=reduce` preview override. The override uses the same reduction path as the OS preference. Screenshots are under `shots/`. Desktop panes scroll independently; the narrow layout stacks. Browser DOM measurements showed no horizontal overflow at 390px and 360px. Browser console error log was empty during this check.
+
+Feel check: entry composed, launch intentional, selected numerical discrepancy clear, export resolved. The first review found operational labels too small and dim. Their size/contrast were increased. An empty retraction filter initially retained the previous source; it now clears selection and presents an explicit empty state. The peak screenshot shows 30% crossed out beside the original 12% with the manuscript still visible.
+
+Functional evidence: all three benchmark buttons produce persisted real pipeline reports using fixture metadata and deterministic inference. Benchmark API tests block external HTTP, check labels and validate the report fingerprint. Certificate downloads as PDF, and Escape closes the focus-managed Radix dialog. Source selection, previous/next, J/K and empty filters were exercised in browser. The production Next.js build passed. All 51 Python tests passed.
+
+Accuracy decisions: no invented live index counter is displayed. Model confidence remains explicitly uncalibrated. The certificate contains an actual SHA-256 digest of the saved report; it is not a digitally signed attestation. Benchmark records and deterministic inference are labeled. Real uploads keep the existing resolver configuration. Media-box PDF coordinate limitations from Phase 4 still apply.
+
+Scope of verification: browser viewport emulation is not a physical phone test. File-drop behavior is implemented with native drag handlers; click-based file selection and upload validation retain the existing API path. Absolute zero CLS has not been certified. The generic skill video harness was inapplicable to the two-route product interface; actual rendered routes and controls were inspected through the available browser tooling. FFmpeg is absent and not needed for this build. No public deployment was performed.
+
+Local URL: http://127.0.0.1:3001/
+
+## Recovery and source-selection follow-up
+
+Pending audit IDs and filenames are saved as soon as uploads/presets are accepted. Refreshing recovers that job; initial launch controls stay disabled until storage recovery finishes. Browser storage is optional, and malformed/quota-blocked storage cannot crash the UI. A missing audit stops polling; transient connection failures retry and expose a manual reconnect control. Failed parsing now shows an explicit stopped timeline without a continuing spinner.
+
+Claims with multiple citations initially select the citation responsible for the combined verdict and its selected proof passage. J/K navigation handles entry from a supported claim correctly. Source scroll resets when switching citations. Six API regression checks and five frontend regression checks passed, including a benchmark completing in under three seconds while the normal audit queue is occupied. The production build passed. Frontend checks run with `cd frontend; pnpm test` using the installed Node 24 runtime.
+
+Browser follow-up recovered a benchmark after refresh, showed a stopped audit for a deliberately malformed PDF selected through the actual file chooser, and displayed the terminal missing-audit state. The completed workbench was rechecked and captured in `shots/workbench-recovery-review.jpg`. A real manuscript audit was kept running throughout its processing; the gateway was refreshed only after it completed. A subsequent user upload was left undisturbed while checks continued in a separate hidden preview.
+
+
+## Supplied grayscale identity, November 19
+- Applied the user's exact five grayscale stops to the active Next.js UI. Surface and text roles use Black, Cod Gray, Mine Shaft, Boulder and Silver Chalice; no colored verdict accents remain. Verdict labels/icons, dashed partial badges and inverse retraction badges carry status.
+- Installed the supplied BBH Bogle and Fredoka variable binaries through next/font/local. Included both OFL licenses in frontend/app/fonts. BBH Bogle is used for major headings and branding, Fredoka for controls/prose; Geist Mono remains for DOI/hash/numeric fields. No remote font request required.
+- Self-authored refinement under the user's explicit creative delegation. Preserved the launch-to-investigation grammar, signature claim-to-proof linkage and existing fingerprint. This is the same requested application, not a new independent build. The prior journey/score remain applicable.
+- Feel check: intended conviction, agency, anticipation, clarity, resolution; observed bold arrival, clear action, real progress, obvious 30%/12% comparison, complete downloadable artifact. Fixed the selected-filter contrast after the first browser pass. No added artificial scroll span or empty act.
+- Verified production build and TypeScript checks, five frontend regression checks, desktop 1280px, phone 390x844, compact 360x640, and the existing reduced-motion override. No horizontal overflow at inspected sizes. Browser console contained no error entries. Inspected opening, middle launch surface, methodology ending, workbench, source comparison and certificate modal.
+- Benchmark button completed a real local fixture audit and routed to its report. Certificate download succeeded; pdfplumber confirmed a one-page PDF containing both 30% and 12%. Escape closed the modal; keyboard focus ring visible. Final selection styling and larger view-toggle targets were included in a second successful production build and browser reload.
+- Palette contrast for primary silver text on black and Cod Gray exceeds 4.5:1. Boulder is used for large headline emphasis and large struck-through data on black, not small body copy. No claim of full accessibility certification.
+- Screenshots: shots/grayscale-desktop.jpg, grayscale-hero.jpg, grayscale-mobile.jpg, grayscale-compact.jpg, grayscale-workbench.jpg, grayscale-workbench-mobile.jpg. Workbench desktop screenshot precedes only the final selected-filter and view-toggle refinements; final phone screenshot includes them.
+- No imagery generated. FFmpeg and generation key are absent; this refinement uses no video or generated assets. CUA browser inspection was used because standalone Playwright is unavailable. Physical phone behavior and operating-system reduced-motion toggling were not tested. Backend stayed running throughout; only the frontend process was restarted.
+- Local release: http://127.0.0.1:3001/.

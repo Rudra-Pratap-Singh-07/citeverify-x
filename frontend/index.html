@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CiteVerify-X — Extraction Review</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>" />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+
+    <!-- ══ Top toolbar ═════════════════════════════════════════════════════════ -->
+    <header class="toolbar" role="banner">
+      <div class="toolbar__brand">
+        <span class="brand-icon" aria-hidden="true">🔍</span>
+        <span class="brand-name">CiteVerify-X</span>
+        <span class="brand-sub">Extraction Review</span>
+      </div>
+
+      <div class="toolbar__actions" role="group" aria-label="Document loading">
+        <label class="file-btn" for="pdf-input">
+          Open PDF
+          <input id="pdf-input" type="file" accept=".pdf" class="sr-only" aria-label="Open PDF file" />
+        </label>
+        <label class="file-btn" for="json-input">
+          Open JSON
+          <input id="json-input" type="file" accept=".json" class="sr-only" aria-label="Open extraction JSON file" />
+        </label>
+        <button id="load-demo-btn" type="button" class="file-btn file-btn--demo">
+          Load Demo
+        </button>
+      </div>
+
+      <div class="toolbar__zoom" role="group" aria-label="PDF zoom controls">
+        <button id="zoom-out" type="button" class="zoom-btn" aria-label="Zoom out">−</button>
+        <span id="zoom-label" class="zoom-label" aria-live="polite" aria-atomic="true">150%</span>
+        <button id="zoom-in" type="button" class="zoom-btn" aria-label="Zoom in">+</button>
+        <button id="zoom-reset" type="button" class="zoom-btn zoom-btn--reset" aria-label="Reset zoom">Reset</button>
+      </div>
+    </header>
+
+    <!-- ══ Banners ═════════════════════════════════════════════════════════════ -->
+    <div
+      id="demo-banner"
+      class="banner banner--demo"
+      role="note"
+      aria-label="Demo data notice"
+      hidden>
+      ⚠ Showing synthetic demo data — not a real academic paper
+    </div>
+
+    <div
+      id="warning-banner"
+      class="banner banner--warning"
+      role="note"
+      aria-label="Extraction warnings"
+      hidden>
+    </div>
+
+    <div
+      id="error-banner"
+      class="banner banner--error"
+      role="alert"
+      aria-live="assertive"
+      hidden>
+    </div>
+
+    <!-- ══ Main two-pane layout ════════════════════════════════════════════════ -->
+    <main class="workspace" id="main">
+
+      <!-- Left pane: extraction list -->
+      <aside class="pane pane--list" aria-label="Extraction list">
+        <div class="pane__header">
+          <h1 class="pane__title">Empirical Claims</h1>
+          <p class="pane__hint">Select a reference row to highlight it in the PDF.</p>
+        </div>
+        <div
+          id="extraction-list"
+          class="extraction-list"
+          role="list"
+          aria-label="Empirical claims">
+          <div class="empty-state">
+            <span class="empty-icon" aria-hidden="true">📄</span>
+            <p>Open a PDF and its matching JSON to begin.</p>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Right pane: PDF viewport -->
+      <section class="pane pane--pdf" aria-label="PDF preview">
+        <div
+          id="pdf-viewport"
+          class="pdf-viewport"
+          aria-label="PDF document pages"
+          tabindex="0">
+          <div class="empty-state">
+            <span class="empty-icon" aria-hidden="true">📄</span>
+            <p>No document loaded.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ══ Detail panel (slide-in) ════════════════════════════════════════════ -->
+    <div
+      id="detail-panel"
+      class="detail-panel"
+      role="complementary"
+      aria-label="Reference detail"
+      hidden>
+    </div>
+
+    <!-- ══ Screen-reader landmark ════════════════════════════════════════════= -->
+    <div role="status" aria-live="polite" class="sr-only" id="sr-status"></div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
